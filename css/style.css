@@ -325,19 +325,6 @@ main { flex: 1; }
 .button--primary { border-color: #f5f5f5; background: #f5f5f5; color: #080808; }
 .button--primary:hover { border-color: var(--accent); background: var(--accent); }
 
-.panel__journey {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    margin-top: 40px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: .9375rem;
-    text-decoration: none;
-}
-
-.panel__journey:hover { color: var(--fg); text-decoration: underline; text-underline-offset: 5px; }
-
 ::view-transition-old(root) { animation: language-out .16s ease-in both; }
 ::view-transition-new(root) { animation: language-in .3s ease-out both; }
 @keyframes language-out { to { opacity: 0; } }

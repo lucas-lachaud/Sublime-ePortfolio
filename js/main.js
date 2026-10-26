@@ -1,10 +1,10 @@
 const texts = {
     en: {
         rights: 'All rights reserved.', languageLabel: 'Choose language', navLabel: 'Main menu', journeyLabel: 'My journey',
-        skip: 'Skip to content', journeyLink: 'See this step on my journey ↑',
+        skip: 'Skip to content',
         about: 'About', education: 'Education', experience: 'Experience', projects: 'Projects', skills: 'Skills', contact: 'Contact',
         heroMeta: 'Computer science engineering student · ENSEEIHT',
-        heroText: 'From banking back-ends to cryptography.',
+        heroText: 'From Nouméa to Toulouse: 17,200 km to become an engineer.',
         scrollHint: 'Scroll',
         noumeaText: 'New Caledonia. This is where it all begins.',
         licenceMeta: '2024 · University of New Caledonia',
@@ -21,15 +21,15 @@ const texts = {
         n7Text: 'Engineering degree in computer science, Toulouse INP. Admitted directly into second year.',
         nextMeta: "What's next?",
         nextTitle: 'Next step',
-        nextText: "I'm looking for an internship for summer 2027.",
+        nextText: "I'm looking for an internship for summer 2027, and I'd be glad to talk with you about it.",
         nextLink: 'Get in touch →'
     },
     fr: {
         rights: 'Tous droits réservés.', languageLabel: 'Choisir la langue', navLabel: 'Menu principal', journeyLabel: 'Parcours',
-        skip: 'Aller au contenu', journeyLink: 'Voir cette étape sur mon parcours ↑',
+        skip: 'Aller au contenu',
         about: 'À propos', education: 'Formation', experience: 'Expérience', projects: 'Projets', skills: 'Compétences', contact: 'Contact',
         heroMeta: 'Élève ingénieur en informatique · ENSEEIHT',
-        heroText: 'Du back-end bancaire à la cryptographie.',
+        heroText: 'De Nouméa à Toulouse, 17 200 km pour devenir ingénieur.',
         scrollHint: 'Faites défiler',
         noumeaText: "Nouvelle-Calédonie. C'est ici que tout commence.",
         licenceMeta: '2024 · Université de la Nouvelle-Calédonie',
@@ -46,7 +46,7 @@ const texts = {
         n7Text: "Diplôme d'ingénieur en informatique, Toulouse INP. Admis directement en deuxième année.",
         nextMeta: 'Et ensuite ?',
         nextTitle: 'Prochaine étape',
-        nextText: "Je cherche un stage pour l'été 2027.",
+        nextText: "Je suis à la recherche d'un stage pour l'été 2027 : je serais ravi d'en discuter avec vous.",
         nextLink: 'Me contacter →'
     }
 };
@@ -132,25 +132,6 @@ document.addEventListener('click', (event) => {
 });
 
 window.matchMedia('(min-width: 1100px)').addEventListener('change', () => setMenuOpen(false));
-
-// Chaque section renvoie au moment du défilement où son étape s'affiche sur le globe.
-document.querySelectorAll('[data-step]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-        const at = Number(link.dataset.step);
-        const step = journey.querySelector(`[data-at="${link.dataset.step}"]`);
-        event.preventDefault();
-        setMenuOpen(false);
-
-        if (journey.classList.contains('journey--animated')) {
-            const stage = journey.querySelector('.journey__stage');
-            const top = journey.getBoundingClientRect().top + window.scrollY;
-            const span = journey.offsetHeight - stage.offsetHeight;
-            window.scrollTo(0, Math.ceil(top + at * span) + 1);
-        } else if (step) {
-            step.scrollIntoView({ block: 'center' });
-        }
-    });
-});
 
 // Après le parcours seulement : l'en-tête revient en petite barre fixe et suit la section affichée.
 let scrollScheduled = false;
