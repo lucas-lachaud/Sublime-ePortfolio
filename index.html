@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lucas Lachaud · Portfolio</title>
-    <meta name="description" content="Lucas Lachaud, élève ingénieur en informatique à l'ENSEEIHT. De Nouméa à Toulouse.">
+    <meta name="description" content="Lucas Lachaud, computer science engineering student at ENSEEIHT. From Nouméa to Toulouse.">
     <meta name="theme-color" content="#080808">
     <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="css/style.css">
@@ -13,6 +13,8 @@
     <script src="js/globe.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#about" data-i18n="skip">Skip to content</a>
+
     <div class="page-intro" aria-hidden="true">
         <div class="page-intro__top"></div>
         <div class="page-intro__bottom"></div>
@@ -25,15 +27,31 @@
                 <span class="clock"><span class="clock__city" data-short="NOU">Nouméa</span> <time data-clock="Pacific/Noumea">--:--</time></span>
                 <span class="clock"><span class="clock__city" data-short="TLS">Toulouse</span> <time data-clock="Europe/Paris">--:--</time></span>
             </div>
-            <div class="language-switch" role="group" aria-label="Choisir la langue">
-                <button type="button" data-lang="fr" aria-pressed="true">FR</button>
-                <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                <span class="menu-toggle__icon" aria-hidden="true"></span>
+                <span>Menu</span>
+            </button>
+            <div class="site-menu" id="site-menu">
+                <nav class="site-nav" aria-label="Main menu" data-i18n-label="navLabel">
+                    <ul class="site-nav__list">
+                        <li><a href="#about" data-i18n="about">About</a></li>
+                        <li><a href="#education" data-i18n="education">Education</a></li>
+                        <li><a href="#experience" data-i18n="experience">Experience</a></li>
+                        <li><a href="#projects" data-i18n="projects">Projects</a></li>
+                        <li><a href="#skills" data-i18n="skills">Skills</a></li>
+                        <li><a href="#contact" data-i18n="contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switch" role="group" aria-label="Choose language" data-i18n-label="languageLabel">
+                    <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+                    <button type="button" data-lang="fr" lang="fr" aria-pressed="false">Français</button>
+                </div>
             </div>
         </div>
     </header>
 
     <main id="main">
-        <section class="journey" id="parcours" aria-label="Parcours">
+        <section class="journey" id="parcours" aria-label="My journey" data-i18n-label="journeyLabel">
             <div class="journey__stage">
                 <div class="journey__visual" aria-hidden="true">
                     <canvas class="journey__globe"></canvas>
@@ -41,46 +59,46 @@
                 <div class="container journey__content">
                     <ol class="journey__steps">
                         <li class="step step--hero" data-at="0">
-                            <p class="step__meta" data-i18n="heroMeta">Élève ingénieur en informatique · ENSEEIHT</p>
+                            <p class="step__meta" data-i18n="heroMeta">Computer science engineering student · ENSEEIHT</p>
                             <h1 class="step__title">Lucas Lachaud</h1>
-                            <p class="step__text" data-i18n="heroText">Du back-end bancaire à la cryptographie.</p>
-                            <p class="step__hint" aria-hidden="true"><span data-i18n="scrollHint">Faites défiler</span> ↓</p>
+                            <p class="step__text" data-i18n="heroText">From banking back-ends to cryptography.</p>
+                            <p class="step__hint" aria-hidden="true"><span data-i18n="scrollHint">Scroll</span> ↓</p>
                         </li>
                         <li class="step" data-at="0.1">
                             <p class="step__meta">22°17′S 166°27′E</p>
                             <h2 class="step__title">Nouméa</h2>
-                            <p class="step__text" data-i18n="noumeaText">Nouvelle-Calédonie. C'est ici que tout commence.</p>
+                            <p class="step__text" data-i18n="noumeaText">New Caledonia. This is where it all begins.</p>
                         </li>
                         <li class="step" data-at="0.2">
-                            <p class="step__meta" data-i18n="licenceMeta">2024 · Université de la Nouvelle-Calédonie</p>
-                            <h2 class="step__title" data-i18n="licenceTitle">Licence Informatique</h2>
-                            <p class="step__text" data-i18n="licenceText">Projet tutoré : une bibliothèque RSA 4096 bits en C, résistante aux attaques par canaux auxiliaires.</p>
+                            <p class="step__meta" data-i18n="licenceMeta">2024 · University of New Caledonia</p>
+                            <h2 class="step__title" data-i18n="licenceTitle">Bachelor's in Computer Science</h2>
+                            <p class="step__text" data-i18n="licenceText">Tutored project: a 4096-bit RSA library in C, hardened against side-channel attacks.</p>
                         </li>
                         <li class="step" data-at="0.3">
-                            <p class="step__meta" data-i18n="bciMeta">Oct. 2025 – janv. 2026 · Stage</p>
-                            <h2 class="step__title" data-i18n="bciTitle">Développeur full stack</h2>
-                            <p class="step__text" data-i18n="bciText">Banque Calédonienne d'Investissement, plateforme BCInet. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.</p>
+                            <p class="step__meta" data-i18n="bciMeta">Oct. 2025 – Jan. 2026 · Internship</p>
+                            <h2 class="step__title" data-i18n="bciTitle">Full stack developer</h2>
+                            <p class="step__text" data-i18n="bciText">Banque Calédonienne d'Investissement, BCInet online banking. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.</p>
                         </li>
                         <li class="step" data-at="0.4">
-                            <p class="step__meta" data-i18n="degreeMeta">Juin 2026 · Diplôme</p>
-                            <h2 class="step__title" data-i18n="degreeTitle">Major de promotion</h2>
-                            <p class="step__text" data-i18n="degreeText">Licence obtenue avec mention Très Bien.</p>
+                            <p class="step__meta" data-i18n="degreeMeta">June 2026 · Graduation</p>
+                            <h2 class="step__title" data-i18n="degreeTitle">Top of the class</h2>
+                            <p class="step__text" data-i18n="degreeText">Bachelor's degree with highest honours.</p>
                         </li>
                         <li class="step" data-at="0.47">
                             <p class="step__meta">Nouméa → Toulouse</p>
-                            <h2 class="step__title" data-i18n="flightTitle">Direction Toulouse</h2>
-                            <p class="step__counters"><span data-km>17 200</span> km · <span data-tz>UTC+2</span></p>
+                            <h2 class="step__title" data-i18n="flightTitle">Heading to Toulouse</h2>
+                            <p class="step__counters"><span data-km>17,200</span> km · <span data-tz>UTC+2</span></p>
                         </li>
                         <li class="step" data-at="0.85">
                             <p class="step__meta" data-i18n="n7Meta">2026 – 2028 · 43°36′N 1°27′E</p>
                             <h2 class="step__title">ENSEEIHT</h2>
-                            <p class="step__text" data-i18n="n7Text">Diplôme d'ingénieur en informatique, Toulouse INP. Admis directement en deuxième année.</p>
+                            <p class="step__text" data-i18n="n7Text">Engineering degree in computer science, Toulouse INP. Admitted directly into second year.</p>
                         </li>
                         <li class="step" data-at="0.94">
-                            <p class="step__meta" data-i18n="nextMeta">Et ensuite ?</p>
-                            <h2 class="step__title" data-i18n="nextTitle">Prochaine étape</h2>
-                            <p class="step__text" data-i18n="nextText">Je cherche un stage pour l'été 2027.</p>
-                            <a class="step__link" href="#contact" data-i18n="nextLink">Me contacter →</a>
+                            <p class="step__meta" data-i18n="nextMeta">What's next?</p>
+                            <h2 class="step__title" data-i18n="nextTitle">Next step</h2>
+                            <p class="step__text" data-i18n="nextText">I'm looking for an internship for summer 2027.</p>
+                            <a class="step__link" href="#contact" data-i18n="nextLink">Get in touch →</a>
                         </li>
                     </ol>
                 </div>
@@ -88,17 +106,186 @@
         </section>
 
         <div class="container panels">
-            <section class="panel" id="about">
+            <section class="panel" id="about" aria-labelledby="about-title">
                 <span class="panel__number" aria-hidden="true">01</span>
-                <h2 class="panel__title" data-i18n="about">À propos</h2>
+                <h2 class="panel__title" id="about-title" data-i18n="about">About</h2>
+                <div class="panel__body" data-only="en" lang="en">
+                    <p>I'm an engineering student at ENSEEIHT (Toulouse INP), in the Systems &amp; Networks track (ASR).</p>
+                    <p>I grew up in Nouméa, New Caledonia. I studied for my bachelor's degree in computer science at the University of New Caledonia and graduated top of my class, with highest honours (<span lang="fr">mention Très Bien</span>).</p>
+                    <p>In 2026 I moved 17,200 km to Toulouse, where I was admitted directly into the second year of the engineering programme.</p>
+                    <p>I'm looking for an internship for summer 2027.</p>
+                    <dl class="facts">
+                        <div><dt>Languages</dt><dd>French (native), English (B2)</dd></div>
+                        <div><dt>Interests</dt><dd>Finance, aeronautics, astronomy, electronics</dd></div>
+                    </dl>
+                </div>
+                <div class="panel__body" data-only="fr" lang="fr" hidden>
+                    <p>Je suis élève ingénieur à l'ENSEEIHT (Toulouse INP), dans la filière Systèmes et Réseaux (ASR).</p>
+                    <p>J'ai grandi à Nouméa, en Nouvelle-Calédonie. J'ai fait ma licence d'informatique à l'Université de la Nouvelle-Calédonie et je l'ai obtenue major de promotion, avec la mention Très Bien.</p>
+                    <p>En 2026, je suis parti à Toulouse, à 17 200 km, où j'ai été admis directement en deuxième année du cycle ingénieur.</p>
+                    <p>Je cherche un stage pour l'été 2027.</p>
+                    <dl class="facts">
+                        <div><dt>Langues</dt><dd>Français (langue maternelle), anglais (B2)</dd></div>
+                        <div><dt>Centres d'intérêt</dt><dd>Finance, aéronautique, astronomie, électronique</dd></div>
+                    </dl>
+                </div>
+                <a class="panel__journey" href="#parcours" data-step="0.1" data-i18n="journeyLink">See this step on my journey ↑</a>
             </section>
-            <section class="panel" id="projects">
+
+            <section class="panel" id="education" aria-labelledby="education-title">
                 <span class="panel__number" aria-hidden="true">02</span>
-                <h2 class="panel__title" data-i18n="projects">Projets</h2>
+                <h2 class="panel__title" id="education-title" data-i18n="education">Education</h2>
+                <div class="panel__body" data-only="en" lang="en">
+                    <article class="entry">
+                        <h3 class="entry__title">Engineering degree, ENSEEIHT (Toulouse INP)</h3>
+                        <p class="entry__meta">2026 – 2028 · Toulouse</p>
+                        <p>Systems &amp; Networks track (ASR). Admitted directly into second year. Expected graduation: 2028.</p>
+                    </article>
+                    <article class="entry">
+                        <h3 class="entry__title">Bachelor's degree in Computer Science, University of New Caledonia</h3>
+                        <p class="entry__meta">Feb. 2024 – June 2026 · Nouméa</p>
+                        <p>Graduated top of my class, with highest honours (<span lang="fr">mention Très Bien</span>).</p>
+                        <p>Courses included software engineering, object-oriented programming in Java, algorithms, databases, operating systems, networks and cryptography.</p>
+                    </article>
+                </div>
+                <div class="panel__body" data-only="fr" lang="fr" hidden>
+                    <article class="entry">
+                        <h3 class="entry__title">Diplôme d'ingénieur, ENSEEIHT (Toulouse INP)</h3>
+                        <p class="entry__meta">2026 – 2028 · Toulouse</p>
+                        <p>Filière Systèmes et Réseaux (ASR). Admis directement en deuxième année. Diplôme prévu en 2028.</p>
+                    </article>
+                    <article class="entry">
+                        <h3 class="entry__title">Licence d'informatique, Université de la Nouvelle-Calédonie</h3>
+                        <p class="entry__meta">Févr. 2024 – juin 2026 · Nouméa</p>
+                        <p>Obtenue major de promotion, avec la mention Très Bien.</p>
+                        <p>Cours suivis, entre autres : génie logiciel, programmation orientée objet en Java, algorithmique, bases de données, systèmes d'exploitation, réseaux et cryptographie.</p>
+                    </article>
+                </div>
+                <a class="panel__journey" href="#parcours" data-step="0.85" data-i18n="journeyLink">See this step on my journey ↑</a>
             </section>
-            <section class="panel" id="contact">
+
+            <section class="panel" id="experience" aria-labelledby="experience-title">
                 <span class="panel__number" aria-hidden="true">03</span>
-                <h2 class="panel__title" data-i18n="contact">Contact</h2>
+                <h2 class="panel__title" id="experience-title" data-i18n="experience">Experience</h2>
+                <div class="panel__body" data-only="en" lang="en">
+                    <article class="entry">
+                        <h3 class="entry__title">Software Engineer intern, BCI (<span lang="fr">Banque Calédonienne d'Investissement</span>)</h3>
+                        <p class="entry__meta">Oct. 2025 – Jan. 2026 · Nouméa</p>
+                        <p>I worked on BCInet, the bank's online banking service: more than 80,000 subscribers and around 30,000 unique visits a day. I was part of an Agile Scrum team.</p>
+                        <p>What I worked on:</p>
+                        <ul class="entry__list">
+                            <li>Transfers, beneficiaries and direct debits, end to end: Angular for the interface, Java and Spring Boot on the server (middleware, JPA repositories, DTOs and mappers).</li>
+                            <li>Automatic expiry of temporary subscription discounts, with Spring Batch.</li>
+                            <li>SQL migrations with Liquibase, kept in sync with the bank's AS400 core banking system.</li>
+                            <li>JUnit tests, Git pull request reviews, CI/CD and code quality with Azure DevOps and SonarQube, H2 and SQL Server databases.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="panel__body" data-only="fr" lang="fr" hidden>
+                    <article class="entry">
+                        <h3 class="entry__title">Stagiaire Software Engineer, BCI (Banque Calédonienne d'Investissement)</h3>
+                        <p class="entry__meta">Oct. 2025 – janv. 2026 · Nouméa</p>
+                        <p>J'ai travaillé sur BCInet, la banque en ligne de la BCI : plus de 80 000 abonnés et environ 30 000 visites uniques par jour. Je faisais partie d'une équipe Agile Scrum.</p>
+                        <p>Ce sur quoi j'ai travaillé :</p>
+                        <ul class="entry__list">
+                            <li>Virements, bénéficiaires et prélèvements, de bout en bout : Angular pour l'interface, Java et Spring Boot côté serveur (middleware, repositories JPA, DTO et mappers).</li>
+                            <li>Expiration automatique des remises temporaires sur les abonnements, avec Spring Batch.</li>
+                            <li>Migrations SQL avec Liquibase, synchronisées avec le système bancaire central AS400.</li>
+                            <li>Tests JUnit, revues de pull requests Git, CI/CD et qualité du code avec Azure DevOps et SonarQube, bases H2 et SQL Server.</li>
+                        </ul>
+                    </article>
+                </div>
+                <a class="panel__journey" href="#parcours" data-step="0.3" data-i18n="journeyLink">See this step on my journey ↑</a>
+            </section>
+
+            <section class="panel" id="projects" aria-labelledby="projects-title">
+                <span class="panel__number" aria-hidden="true">04</span>
+                <h2 class="panel__title" id="projects-title" data-i18n="projects">Projects</h2>
+                <div class="panel__body" data-only="en" lang="en">
+                    <article class="entry">
+                        <h3 class="entry__title">4096-bit RSA library in C</h3>
+                        <p class="entry__meta">2025 · Tutored project, bachelor's degree</p>
+                        <p>RSA is one of the most widely used public-key encryption methods. This project is a C library that implements RSA with 4096-bit keys.</p>
+                        <ul class="entry__list">
+                            <li>GMP to compute with very large numbers, and libsodium for cryptographically secure randomness.</li>
+                            <li>Five modular exponentiation algorithms (the core calculation of RSA) implemented and compared, including square-and-multiply and the Montgomery and interleaved ladders: on speed, and on resistance to side-channel attacks.</li>
+                        </ul>
+                        <p class="note"><strong>What is a side-channel attack?</strong> Instead of breaking the maths, the attacker watches the machine while it computes (how long it takes, how much power it uses) and works out the secret key from that.</p>
+                    </article>
+                </div>
+                <div class="panel__body" data-only="fr" lang="fr" hidden>
+                    <article class="entry">
+                        <h3 class="entry__title">Bibliothèque RSA 4096 bits en C</h3>
+                        <p class="entry__meta">2025 · Projet tutoré de licence</p>
+                        <p>RSA est l'une des méthodes de chiffrement à clé publique les plus utilisées. Ce projet est une bibliothèque en C qui met en œuvre RSA avec des clés de 4096 bits.</p>
+                        <ul class="entry__list">
+                            <li>GMP pour calculer sur de très grands nombres, et libsodium pour un aléa cryptographiquement sûr.</li>
+                            <li>Cinq algorithmes d'exponentiation modulaire (le calcul au cœur de RSA) implémentés et comparés, dont square-and-multiply et les échelles de Montgomery et entrelacées : en vitesse, et en résistance aux attaques par canaux auxiliaires.</li>
+                        </ul>
+                        <p class="note"><strong>Une attaque par canal auxiliaire, c'est quoi ?</strong> Au lieu de casser les mathématiques, l'attaquant observe la machine pendant qu'elle calcule (le temps qu'elle met, l'électricité qu'elle consomme) et en déduit la clé secrète.</p>
+                    </article>
+                </div>
+                <a class="panel__journey" href="#parcours" data-step="0.2" data-i18n="journeyLink">See this step on my journey ↑</a>
+            </section>
+
+            <section class="panel" id="skills" aria-labelledby="skills-title">
+                <span class="panel__number" aria-hidden="true">05</span>
+                <h2 class="panel__title" id="skills-title" data-i18n="skills">Skills</h2>
+                <div class="panel__body" data-only="en" lang="en">
+                    <p>Grouped by the step of my journey where I used them.</p>
+                    <h3 class="entry__title">During my internship at BCI</h3>
+                    <ul class="tags">
+                        <li>Java</li><li>Spring Boot</li><li>Spring Batch</li><li>Angular</li><li>JPA</li><li>JUnit</li><li>SQL</li><li>Liquibase</li><li>SQL Server</li><li>Git</li><li>Azure DevOps</li><li>CI/CD</li><li>SonarQube</li>
+                    </ul>
+                    <h3 class="entry__title">During my RSA project</h3>
+                    <ul class="tags">
+                        <li>C</li><li>GMP</li><li>libsodium</li><li>Cryptography</li><li>Side-channel attacks</li>
+                    </ul>
+                    <h3 class="entry__title">Other skills</h3>
+                    <ul class="tags">
+                        <li>Python</li><li>TypeScript</li><li>Hibernate</li><li>Maven</li><li>Linux</li><li>Docker</li><li>Postman</li><li>DBeaver</li>
+                    </ul>
+                </div>
+                <div class="panel__body" data-only="fr" lang="fr" hidden>
+                    <p>Regroupées selon l'étape de mon parcours où je les ai utilisées.</p>
+                    <h3 class="entry__title">Pendant mon stage à la BCI</h3>
+                    <ul class="tags">
+                        <li>Java</li><li>Spring Boot</li><li>Spring Batch</li><li>Angular</li><li>JPA</li><li>JUnit</li><li>SQL</li><li>Liquibase</li><li>SQL Server</li><li>Git</li><li>Azure DevOps</li><li>CI/CD</li><li>SonarQube</li>
+                    </ul>
+                    <h3 class="entry__title">Pendant mon projet RSA</h3>
+                    <ul class="tags">
+                        <li>C</li><li>GMP</li><li>libsodium</li><li>Cryptographie</li><li>Attaques par canaux auxiliaires</li>
+                    </ul>
+                    <h3 class="entry__title">Autres compétences</h3>
+                    <ul class="tags">
+                        <li>Python</li><li>TypeScript</li><li>Hibernate</li><li>Maven</li><li>Linux</li><li>Docker</li><li>Postman</li><li>DBeaver</li>
+                    </ul>
+                </div>
+                <a class="panel__journey" href="#parcours" data-step="0.3" data-i18n="journeyLink">See this step on my journey ↑</a>
+            </section>
+
+            <section class="panel" id="contact" aria-labelledby="contact-title">
+                <span class="panel__number" aria-hidden="true">06</span>
+                <h2 class="panel__title" id="contact-title" data-i18n="contact">Contact</h2>
+                <div class="panel__body" data-only="en" lang="en">
+                    <p>I'm looking for an internship for summer 2027. You can contact me on LinkedIn.</p>
+                    <p class="actions">
+                        <a class="button button--primary" href="https://www.linkedin.com/in/lucas-lachaud">My LinkedIn profile</a>
+                    </p>
+                    <dl class="facts">
+                        <div><dt>Location</dt><dd>Toulouse, France</dd></div>
+                    </dl>
+                </div>
+                <div class="panel__body" data-only="fr" lang="fr" hidden>
+                    <p>Je cherche un stage pour l'été 2027. Vous pouvez me contacter sur LinkedIn.</p>
+                    <p class="actions">
+                        <a class="button button--primary" href="https://www.linkedin.com/in/lucas-lachaud">Mon profil LinkedIn</a>
+                    </p>
+                    <dl class="facts">
+                        <div><dt>Ville</dt><dd>Toulouse, France</dd></div>
+                    </dl>
+                </div>
+                <a class="panel__journey" href="#parcours" data-step="0.94" data-i18n="journeyLink">See this step on my journey ↑</a>
             </section>
         </div>
     </main>
@@ -106,7 +293,7 @@
     <footer class="site-footer">
         <div class="container site-footer__inner">
             <span>© 2026 Lucas Lachaud</span>
-            <span data-i18n="rights">Tous droits réservés.</span>
+            <span data-i18n="rights">All rights reserved.</span>
         </div>
     </footer>
 </body>

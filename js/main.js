@@ -1,29 +1,8 @@
 const texts = {
-    fr: {
-        rights: 'Tous droits réservés.', languageLabel: 'Choisir la langue', about: 'À propos', projects: 'Projets', contact: 'Contact',
-        heroMeta: 'Élève ingénieur en informatique · ENSEEIHT',
-        heroText: 'Du back-end bancaire à la cryptographie.',
-        scrollHint: 'Faites défiler',
-        noumeaText: "Nouvelle-Calédonie. C'est ici que tout commence.",
-        licenceMeta: '2024 · Université de la Nouvelle-Calédonie',
-        licenceTitle: 'Licence Informatique',
-        licenceText: 'Projet tutoré : une bibliothèque RSA 4096 bits en C, résistante aux attaques par canaux auxiliaires.',
-        bciMeta: 'Oct. 2025 – janv. 2026 · Stage',
-        bciTitle: 'Développeur full stack',
-        bciText: "Banque Calédonienne d'Investissement, plateforme BCInet. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.",
-        degreeMeta: 'Juin 2026 · Diplôme',
-        degreeTitle: 'Major de promotion',
-        degreeText: 'Licence obtenue avec mention Très Bien.',
-        flightTitle: 'Direction Toulouse',
-        n7Meta: '2026 – 2028 · 43°36′N 1°27′E',
-        n7Text: "Diplôme d'ingénieur en informatique, Toulouse INP. Admis directement en deuxième année.",
-        nextMeta: 'Et ensuite ?',
-        nextTitle: 'Prochaine étape',
-        nextText: "Je cherche un stage pour l'été 2027.",
-        nextLink: 'Me contacter →'
-    },
     en: {
-        rights: 'All rights reserved.', languageLabel: 'Choose language', about: 'About', projects: 'Projects', contact: 'Contact',
+        rights: 'All rights reserved.', languageLabel: 'Choose language', navLabel: 'Main menu', journeyLabel: 'My journey',
+        skip: 'Skip to content', journeyLink: 'See this step on my journey ↑',
+        about: 'About', education: 'Education', experience: 'Experience', projects: 'Projects', skills: 'Skills', contact: 'Contact',
         heroMeta: 'Computer science engineering student · ENSEEIHT',
         heroText: 'From banking back-ends to cryptography.',
         scrollHint: 'Scroll',
@@ -44,18 +23,52 @@ const texts = {
         nextTitle: 'Next step',
         nextText: "I'm looking for an internship for summer 2027.",
         nextLink: 'Get in touch →'
+    },
+    fr: {
+        rights: 'Tous droits réservés.', languageLabel: 'Choisir la langue', navLabel: 'Menu principal', journeyLabel: 'Parcours',
+        skip: 'Aller au contenu', journeyLink: 'Voir cette étape sur mon parcours ↑',
+        about: 'À propos', education: 'Formation', experience: 'Expérience', projects: 'Projets', skills: 'Compétences', contact: 'Contact',
+        heroMeta: 'Élève ingénieur en informatique · ENSEEIHT',
+        heroText: 'Du back-end bancaire à la cryptographie.',
+        scrollHint: 'Faites défiler',
+        noumeaText: "Nouvelle-Calédonie. C'est ici que tout commence.",
+        licenceMeta: '2024 · Université de la Nouvelle-Calédonie',
+        licenceTitle: 'Licence Informatique',
+        licenceText: 'Projet tutoré : une bibliothèque RSA 4096 bits en C, résistante aux attaques par canaux auxiliaires.',
+        bciMeta: 'Oct. 2025 – janv. 2026 · Stage',
+        bciTitle: 'Développeur full stack',
+        bciText: "Banque Calédonienne d'Investissement, plateforme BCInet. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.",
+        degreeMeta: 'Juin 2026 · Diplôme',
+        degreeTitle: 'Major de promotion',
+        degreeText: 'Licence obtenue avec mention Très Bien.',
+        flightTitle: 'Direction Toulouse',
+        n7Meta: '2026 – 2028 · 43°36′N 1°27′E',
+        n7Text: "Diplôme d'ingénieur en informatique, Toulouse INP. Admis directement en deuxième année.",
+        nextMeta: 'Et ensuite ?',
+        nextTitle: 'Prochaine étape',
+        nextText: "Je cherche un stage pour l'été 2027.",
+        nextLink: 'Me contacter →'
     }
 };
 
 const buttons = document.querySelectorAll('[data-lang]');
-const panels = [...document.querySelectorAll('.panel')];
+const header = document.querySelector('.site-header');
+const journey = document.querySelector('.journey');
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = [...document.querySelectorAll('.site-nav a')];
+const sections = navLinks.map((link) => document.querySelector(link.hash));
 
 function setLanguage(language) {
     document.documentElement.lang = language;
     document.querySelectorAll('[data-i18n]').forEach((element) => {
         element.textContent = texts[language][element.dataset.i18n];
     });
-    document.querySelector('.language-switch').setAttribute('aria-label', texts[language].languageLabel);
+    document.querySelectorAll('[data-i18n-label]').forEach((element) => {
+        element.setAttribute('aria-label', texts[language][element.dataset.i18nLabel]);
+    });
+    document.querySelectorAll('[data-only]').forEach((element) => {
+        element.hidden = element.dataset.only !== language;
+    });
 
     buttons.forEach((button) => {
         button.setAttribute('aria-pressed', String(button.dataset.lang === language));
@@ -100,25 +113,77 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => changeLanguage(button.dataset.lang));
 });
 
-let scrollScheduled = false;
-function updateActivePanel() {
-    const threshold = window.innerHeight * .55;
-    let active = panels[0];
-    panels.forEach((panel) => {
-        if (panel.getBoundingClientRect().top <= threshold) active = panel;
-    });
-    panels.forEach((panel) => panel.classList.toggle('is-active', panel === active));
-    scrollScheduled = false;
+// Menu replié (sous 1100px) : bouton « Menu », fermeture par Échap, clic à l'extérieur ou choix d'un lien.
+function setMenuOpen(open, returnFocus = false) {
+    menuToggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('is-open', open);
+    if (!open && returnFocus) menuToggle.focus();
 }
 
-function schedulePanelUpdate() {
+menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+navLinks.forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('is-open')) setMenuOpen(false, true);
+});
+
+document.addEventListener('click', (event) => {
+    if (header.classList.contains('is-open') && !header.contains(event.target)) setMenuOpen(false);
+});
+
+window.matchMedia('(min-width: 1100px)').addEventListener('change', () => setMenuOpen(false));
+
+// Chaque section renvoie au moment du défilement où son étape s'affiche sur le globe.
+document.querySelectorAll('[data-step]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        const at = Number(link.dataset.step);
+        const step = journey.querySelector(`[data-at="${link.dataset.step}"]`);
+        event.preventDefault();
+        setMenuOpen(false);
+
+        if (journey.classList.contains('journey--animated')) {
+            const stage = journey.querySelector('.journey__stage');
+            const top = journey.getBoundingClientRect().top + window.scrollY;
+            const span = journey.offsetHeight - stage.offsetHeight;
+            window.scrollTo(0, Math.ceil(top + at * span) + 1);
+        } else if (step) {
+            step.scrollIntoView({ block: 'center' });
+        }
+    });
+});
+
+// Après le parcours seulement : l'en-tête revient en petite barre fixe et suit la section affichée.
+let scrollScheduled = false;
+function updateHeader() {
+    scrollScheduled = false;
+    const docked = journey.getBoundingClientRect().bottom <= 0;
+    if (docked !== header.classList.contains('is-docked')) {
+        header.classList.toggle('is-docked', docked);
+        setMenuOpen(false);
+    }
+
+    const threshold = window.innerHeight * .4;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    let current = null;
+    sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= threshold) current = section;
+    });
+    if (atBottom && sections.at(-1).getBoundingClientRect().top < window.innerHeight) current = sections.at(-1);
+
+    navLinks.forEach((link, i) => {
+        if (sections[i] === current) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+    });
+}
+
+function scheduleHeaderUpdate() {
     if (scrollScheduled) return;
     scrollScheduled = true;
-    requestAnimationFrame(updateActivePanel);
+    requestAnimationFrame(updateHeader);
 }
 
-window.addEventListener('scroll', schedulePanelUpdate, { passive: true });
-window.addEventListener('resize', schedulePanelUpdate);
+window.addEventListener('scroll', scheduleHeaderUpdate, { passive: true });
+window.addEventListener('resize', scheduleHeaderUpdate);
 
 const clocks = [...document.querySelectorAll('[data-clock]')].map((element) => ({
     element,
@@ -138,8 +203,7 @@ let savedLanguage;
 try {
     savedLanguage = localStorage.getItem('portfolio-language');
 } catch (_) {
-    // Le français reste la langue par défaut.
+    // L'anglais reste la langue par défaut.
 }
-setLanguage(savedLanguage === 'en' ? 'en' : 'fr');
-updateActivePanel();
-document.documentElement.classList.add('motion-ready');
+setLanguage(savedLanguage === 'fr' ? 'fr' : 'en');
+updateHeader();
