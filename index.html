@@ -1,10 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucas Lachaud · Portfolio</title>
+    <meta name="description" content="Lucas Lachaud, élève ingénieur en informatique à l'ENSEEIHT. De Nouméa à Toulouse.">
+    <meta name="theme-color" content="#080808">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/land.js" defer></script>
+    <script src="js/globe.js" defer></script>
 </head>
 <body>
-$END$
+    <div class="page-intro" aria-hidden="true">
+        <div class="page-intro__top"></div>
+        <div class="page-intro__bottom"></div>
+        <span class="page-intro__label">Portfolio</span>
+    </div>
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html" data-short="LL">Lucas Lachaud</a>
+            <div class="clocks">
+                <span class="clock"><span class="clock__city" data-short="NOU">Nouméa</span> <time data-clock="Pacific/Noumea">--:--</time></span>
+                <span class="clock"><span class="clock__city" data-short="TLS">Toulouse</span> <time data-clock="Europe/Paris">--:--</time></span>
+            </div>
+            <div class="language-switch" role="group" aria-label="Choisir la langue">
+                <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+                <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="journey" id="parcours" aria-label="Parcours">
+            <div class="journey__stage">
+                <div class="journey__visual" aria-hidden="true">
+                    <canvas class="journey__globe"></canvas>
+                </div>
+                <div class="container journey__content">
+                    <ol class="journey__steps">
+                        <li class="step step--hero" data-at="0">
+                            <p class="step__meta" data-i18n="heroMeta">Élève ingénieur en informatique · ENSEEIHT</p>
+                            <h1 class="step__title">Lucas Lachaud</h1>
+                            <p class="step__text" data-i18n="heroText">Du back-end bancaire à la cryptographie.</p>
+                            <p class="step__hint" aria-hidden="true"><span data-i18n="scrollHint">Faites défiler</span> ↓</p>
+                        </li>
+                        <li class="step" data-at="0.1">
+                            <p class="step__meta">22°17′S 166°27′E</p>
+                            <h2 class="step__title">Nouméa</h2>
+                            <p class="step__text" data-i18n="noumeaText">Nouvelle-Calédonie. C'est ici que tout commence.</p>
+                        </li>
+                        <li class="step" data-at="0.2">
+                            <p class="step__meta" data-i18n="licenceMeta">2024 · Université de la Nouvelle-Calédonie</p>
+                            <h2 class="step__title" data-i18n="licenceTitle">Licence Informatique</h2>
+                            <p class="step__text" data-i18n="licenceText">Projet tutoré : une bibliothèque RSA 4096 bits en C, résistante aux attaques par canaux auxiliaires.</p>
+                        </li>
+                        <li class="step" data-at="0.3">
+                            <p class="step__meta" data-i18n="bciMeta">Oct. 2025 – janv. 2026 · Stage</p>
+                            <h2 class="step__title" data-i18n="bciTitle">Développeur full stack</h2>
+                            <p class="step__text" data-i18n="bciText">Banque Calédonienne d'Investissement, plateforme BCInet. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.</p>
+                        </li>
+                        <li class="step" data-at="0.4">
+                            <p class="step__meta" data-i18n="degreeMeta">Juin 2026 · Diplôme</p>
+                            <h2 class="step__title" data-i18n="degreeTitle">Major de promotion</h2>
+                            <p class="step__text" data-i18n="degreeText">Licence obtenue avec mention Très Bien.</p>
+                        </li>
+                        <li class="step" data-at="0.47">
+                            <p class="step__meta">Nouméa → Toulouse</p>
+                            <h2 class="step__title" data-i18n="flightTitle">Direction Toulouse</h2>
+                            <p class="step__counters"><span data-km>17 200</span> km · <span data-tz>UTC+2</span></p>
+                        </li>
+                        <li class="step" data-at="0.85">
+                            <p class="step__meta" data-i18n="n7Meta">2026 – 2028 · 43°36′N 1°27′E</p>
+                            <h2 class="step__title">ENSEEIHT</h2>
+                            <p class="step__text" data-i18n="n7Text">Diplôme d'ingénieur en informatique, Toulouse INP. Admis directement en deuxième année.</p>
+                        </li>
+                        <li class="step" data-at="0.94">
+                            <p class="step__meta" data-i18n="nextMeta">Et ensuite ?</p>
+                            <h2 class="step__title" data-i18n="nextTitle">Prochaine étape</h2>
+                            <p class="step__text" data-i18n="nextText">Je cherche un stage pour l'été 2027.</p>
+                            <a class="step__link" href="#contact" data-i18n="nextLink">Me contacter →</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <div class="container panels">
+            <section class="panel" id="about">
+                <span class="panel__number" aria-hidden="true">01</span>
+                <h2 class="panel__title" data-i18n="about">À propos</h2>
+            </section>
+            <section class="panel" id="projects">
+                <span class="panel__number" aria-hidden="true">02</span>
+                <h2 class="panel__title" data-i18n="projects">Projets</h2>
+            </section>
+            <section class="panel" id="contact">
+                <span class="panel__number" aria-hidden="true">03</span>
+                <h2 class="panel__title" data-i18n="contact">Contact</h2>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <span>© 2026 Lucas Lachaud</span>
+            <span data-i18n="rights">Tous droits réservés.</span>
+        </div>
+    </footer>
 </body>
 </html>
