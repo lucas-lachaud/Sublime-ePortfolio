@@ -303,6 +303,94 @@ main { flex: 1; }
 .panel__body > h3 + .tags { margin-top: 16px; }
 .tags li { padding: 6px 14px; border: 1px solid #333; border-radius: 999px; font-size: 1.0625rem; }
 
+/* En dehors de l'informatique : un texte et ses photos par passion */
+.passions { margin-top: 56px; color: var(--fg); font-size: 1.125rem; line-height: 1.6; }
+.passions p { max-width: 46rem; }
+.passions__title { margin: 0; font-size: 1.375rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.35; }
+.passions__title + p { margin-top: 1em; }
+.gallery__hint { margin-top: 8px; color: var(--muted); font-size: 1rem; }
+.passion { margin-top: 48px; }
+.passion__title { margin: 0 0 8px; font-size: 1.1875rem; font-weight: 600; line-height: 1.35; }
+
+.gallery__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 16px; margin: 20px 0 0; padding: 0; list-style: none; }
+.gallery__grid--wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+.gallery__grid figure { margin: 0; }
+.gallery__grid a { display: block; overflow: hidden; border: 1px solid #333; border-radius: 10px; background: #000; transition: border-color .25s ease; }
+.gallery__grid a:hover { border-color: #f5f5f5; }
+.gallery__grid img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.gallery__grid--wide img { aspect-ratio: 4 / 3; }
+@media (max-width: 599px) { .gallery__grid--wide { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+.gallery__grid figcaption { margin-top: 10px; color: var(--fg); font-size: 1rem; line-height: 1.4; }
+
+/* Visionneuse de photos */
+html.has-lightbox { overflow: hidden; }
+
+.lightbox {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 12px clamp(12px, 3vw, 32px) max(16px, env(safe-area-inset-bottom));
+    border: 0;
+    background: rgba(5, 5, 5, .95);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: var(--fg);
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.lightbox[open] { display: flex; }
+.lightbox::backdrop { background: transparent; }
+.lightbox.is-visible { opacity: 1; }
+
+.lightbox__top,
+.lightbox__nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.lightbox__nav { justify-content: center; }
+.lightbox__count { color: var(--muted); font-family: var(--font-mono); font-size: 1rem; font-variant-numeric: tabular-nums; }
+
+.lightbox__stage {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    margin: 12px 0;
+    transform: scale(.94);
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+}
+
+.lightbox.is-visible .lightbox__stage { transform: none; }
+.lightbox__img { display: block; min-height: 0; max-width: 100%; max-height: 100%; border-radius: 8px; object-fit: contain; box-shadow: 0 20px 60px #000c; }
+.lightbox__caption { flex: none; margin-top: 14px; font-size: 1.125rem; text-align: center; }
+
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+    min-height: 48px;
+    padding: 0 20px;
+    border: 1px solid #5e5e5e;
+    border-radius: 999px;
+    background: #0d0d0d;
+    color: var(--fg);
+    font-size: 1.0625rem;
+    cursor: pointer;
+    transition: border-color .25s ease, background-color .25s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover { border-color: #f5f5f5; }
+.lightbox__prev, .lightbox__next { min-width: 150px; }
+
+@media (max-width: 599px) {
+    .lightbox__prev, .lightbox__next { flex: 1; min-width: 0; }
+}
+
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .panel__body > .actions { margin-top: 32px; }
 
@@ -340,7 +428,7 @@ main { flex: 1; }
 
 @media (prefers-reduced-motion: reduce) {
     .page-intro { display: none; }
-    .language-switch button, .menu-toggle, .button { transition: none; }
+    .language-switch button, .menu-toggle, .button, .gallery__grid a, .lightbox, .lightbox__stage, .lightbox button { transition: none; }
     .site-header.is-docked { animation: none; }
     .step { transition: none; }
     ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .01ms; }

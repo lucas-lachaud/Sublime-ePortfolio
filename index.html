@@ -7,8 +7,8 @@
     <meta name="description" content="Lucas Lachaud, computer science engineering student at ENSEEIHT. From Nouméa to Toulouse.">
     <meta name="theme-color" content="#080808">
     <script>document.documentElement.classList.add('js');</script>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css?v=10">
+    <script src="js/main.js?v=10" defer></script>
     <script src="js/land.js" defer></script>
     <script src="js/globe.js" defer></script>
 </head>
@@ -114,20 +114,131 @@
                     <p>I grew up in Nouméa, New Caledonia. I studied for my bachelor's degree in computer science at the University of New Caledonia, where I finished first in my year, with highest honours (<span lang="fr">mention Très Bien</span>).</p>
                     <p>In 2026 I moved 17,200 km to Toulouse, where I was admitted directly into the second year of the engineering programme.</p>
                     <p>I'm looking for an internship for summer 2027. If my profile interests you, I'd be delighted to hear from you!</p>
+                    <p class="actions"><a class="button button--primary" href="https://www.linkedin.com/in/lucas-lachaud">Contact me</a></p>
                     <dl class="facts">
                         <div><dt>Languages</dt><dd>French (native), English (B2)</dd></div>
-                        <div><dt>Interests</dt><dd>Finance, aeronautics, astronomy, electronics</dd></div>
                     </dl>
                 </div>
                 <div class="panel__body" data-only="fr" lang="fr" hidden>
                     <p>Je suis élève ingénieur à l'ENSEEIHT (Toulouse INP), dans la filière Systèmes et Réseaux (ASR).</p>
-                    <p>J'ai grandi à Nouméa, en Nouvelle-Calédonie. J'ai fait ma licence d'informatique à l'Université de la Nouvelle-Calédonie, que j'ai terminée premier de ma promotion, avec la mention Très Bien.</p>
+                    <p>J'ai grandi à Nouméa, en Nouvelle-Calédonie. J'ai fait ma licence d'informatique à l'Université de la Nouvelle-Calédonie, que j'ai terminée major de promotion, avec la mention Très Bien.</p>
                     <p>En 2026, je suis parti à Toulouse, à 17 200 km, où j'ai été admis directement en deuxième année du cycle ingénieur.</p>
                     <p>Je suis à la recherche d'un stage pour l'été 2027. Si mon profil vous intéresse, je serais ravi d'échanger avec vous !</p>
+                    <p class="actions"><a class="button button--primary" href="https://www.linkedin.com/in/lucas-lachaud">Me contacter</a></p>
                     <dl class="facts">
                         <div><dt>Langues</dt><dd>Français (langue maternelle), anglais (B2)</dd></div>
-                        <div><dt>Centres d'intérêt</dt><dd>Finance, aéronautique, astronomie, électronique</dd></div>
                     </dl>
+                </div>
+                <div class="passions">
+                    <h3 class="passions__title" data-i18n="passionsTitle">Outside of computing</h3>
+                    <p data-i18n="passionsIntro">Even though computing is my passion, I'm above all a curious person, always eager to learn. I love understanding how the world works, which is why I have many different passions.</p>
+                    <p class="gallery__hint" data-i18n="galleryHint">Click or tap a photo to see it full size.</p>
+                    <div class="passion">
+                        <h4 class="passion__title" data-i18n="astroTitle">Astronomy and astrophotography</h4>
+                        <p data-i18n="astroText">I photograph nebulae and galaxies, such as the Carina Nebula, M83 and the Sombrero Galaxy (M104).</p>
+                        <ul class="gallery__grid">
+                            <li>
+                                <figure>
+                                    <a href="img/astro/carina-full.webp"><img src="img/astro/carina.webp" width="600" height="600" loading="lazy" decoding="async" alt="Carina Nebula (NGC 3372)" data-i18n-alt="carina"></a>
+                                    <figcaption data-i18n="carina">Carina Nebula (NGC 3372)</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/astro/orion-full.webp"><img src="img/astro/orion.webp" width="600" height="600" loading="lazy" decoding="async" alt="Orion Nebula (M42)" data-i18n-alt="orion"></a>
+                                    <figcaption data-i18n="orion">Orion Nebula (M42)</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/astro/m83-full.webp"><img src="img/astro/m83.webp" width="600" height="600" loading="lazy" decoding="async" alt="Southern Pinwheel Galaxy (M83)" data-i18n-alt="m83"></a>
+                                    <figcaption data-i18n="m83">Southern Pinwheel Galaxy (M83)</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/astro/sombrero-full.webp"><img src="img/astro/sombrero.webp" width="600" height="600" loading="lazy" decoding="async" alt="Sombrero Galaxy (M104)" data-i18n-alt="sombrero"></a>
+                                    <figcaption data-i18n="sombrero">Sombrero Galaxy (M104)</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/astro/moon-full.webp"><img src="img/astro/moon.webp" width="600" height="600" loading="lazy" decoding="async" alt="The Moon" data-i18n-alt="moon"></a>
+                                    <figcaption data-i18n="moon">The Moon</figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="passion">
+                        <h4 class="passion__title" data-i18n="woodTitle">Woodwork</h4>
+                        <p data-i18n="woodText">Building a wooden deck, from the frame to the decking boards.</p>
+                        <ul class="gallery__grid gallery__grid--wide">
+                            <li>
+                                <figure>
+                                    <a href="img/projects/deck-frame-full.webp"><img src="img/projects/deck-frame.webp" width="800" height="600" loading="lazy" decoding="async" alt="The frame" data-i18n-alt="deckFrame"></a>
+                                    <figcaption data-i18n="deckFrame">The frame</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/projects/deck-boards-full.webp"><img src="img/projects/deck-boards.webp" width="800" height="600" loading="lazy" decoding="async" alt="Laying the decking boards" data-i18n-alt="deckBoards"></a>
+                                    <figcaption data-i18n="deckBoards">Laying the decking boards</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/projects/deck-finished-full.webp"><img src="img/projects/deck-finished.webp" width="800" height="600" loading="lazy" decoding="async" alt="The finished deck" data-i18n-alt="deckDone"></a>
+                                    <figcaption data-i18n="deckDone">The finished deck</figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="passion">
+                        <h4 class="passion__title" data-i18n="elecTitle">Electronics and 3D printing</h4>
+                        <p data-i18n="elecText">I solder and 3D-print parts. I'm currently working on a BC-250 (an AMD board originally made for cryptocurrency mining) that I completely rebuilt and fully unlocked. I use it as a server that I can reach from anywhere with Tailscale.</p>
+                        <ul class="gallery__grid gallery__grid--wide">
+                            <li>
+                                <figure>
+                                    <a href="img/projects/bc250-full.webp"><img src="img/projects/bc250.webp" width="800" height="600" loading="lazy" decoding="async" alt="BC-250 case, 3D model" data-i18n-alt="bc250"></a>
+                                    <figcaption data-i18n="bc250">BC-250 case, 3D model</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/projects/bc250-open-full.webp"><img src="img/projects/bc250-open.webp" width="800" height="600" loading="lazy" decoding="async" alt="BC-250 case, exploded view" data-i18n-alt="bc250Open"></a>
+                                    <figcaption data-i18n="bc250Open">BC-250 case, exploded view</figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="passion">
+                        <h4 class="passion__title" data-i18n="aviationTitle">Aviation</h4>
+                        <p data-i18n="aviationText">I had started training for my private pilot licence (PPL), but had to stop because of the riots in New Caledonia. Aviation is still a big passion of mine.</p>
+                        <ul class="gallery__grid gallery__grid--wide">
+                            <li>
+                                <figure>
+                                    <a href="img/projects/amedee-full.webp"><img src="img/projects/amedee.webp" width="800" height="600" loading="lazy" decoding="async" alt="Flying over the Amédée lighthouse" data-i18n-alt="amedee"></a>
+                                    <figcaption data-i18n="amedee">Flying over the Amédée lighthouse</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/projects/cdg-full.webp"><img src="img/projects/cdg.webp" width="800" height="600" loading="lazy" decoding="async" alt="An Air France Boeing 777 at Paris-Charles de Gaulle" data-i18n-alt="cdg"></a>
+                                    <figcaption data-i18n="cdg">An Air France Boeing 777 at Paris-Charles de Gaulle</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a href="img/projects/sydney-full.webp"><img src="img/projects/sydney.webp" width="800" height="600" loading="lazy" decoding="async" alt="Over Sydney" data-i18n-alt="sydney"></a>
+                                    <figcaption data-i18n="sydney">Over Sydney</figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="passion">
+                        <h4 class="passion__title" data-i18n="financeTitle">Finance and markets</h4>
+                        <p data-i18n="financeText">I was passionate about finance long before my internship, especially when it comes to tech companies such as Nvidia, AMD and Big Tech. I like following the markets because they help me understand the world and how it works, and they are closely tied to the news. I also invest personally, mostly in US markets. My internship at BCI confirmed this passion: I loved working in banking, where I also saw payment systems up close.</p>
+                    </div>
                 </div>
             </section>
 
@@ -144,7 +255,7 @@
                         <h3 class="entry__title">Bachelor's degree in Computer Science, University of New Caledonia</h3>
                         <p class="entry__meta">Feb. 2024 – June 2026 · Nouméa</p>
                         <p>Finished first in my year, with highest honours (<span lang="fr">mention Très Bien</span>).</p>
-                        <p>Courses included software engineering, object-oriented programming in Java, algorithms, databases, operating systems, networks and cryptography.</p>
+                        <p>Courses included software engineering, object-oriented programming in Java, algorithms, databases, operating systems, networks, cryptography, and electricity and electronics.</p>
                     </article>
                 </div>
                 <div class="panel__body" data-only="fr" lang="fr" hidden>
@@ -156,8 +267,8 @@
                     <article class="entry">
                         <h3 class="entry__title">Licence d'informatique, Université de la Nouvelle-Calédonie</h3>
                         <p class="entry__meta">Févr. 2024 – juin 2026 · Nouméa</p>
-                        <p>Premier de ma promotion, avec la mention Très Bien.</p>
-                        <p>Cours suivis, entre autres : génie logiciel, programmation orientée objet en Java, algorithmique, bases de données, systèmes d'exploitation, réseaux et cryptographie.</p>
+                        <p>Major de promotion, avec la mention Très Bien.</p>
+                        <p>Cours suivis, entre autres : génie logiciel, programmation orientée objet en Java, algorithmique, bases de données, systèmes d'exploitation, réseaux, cryptographie, électricité et électronique.</p>
                     </article>
                 </div>
             </section>
@@ -290,5 +401,20 @@
             <span data-i18n="rights">All rights reserved.</span>
         </div>
     </footer>
+
+    <dialog class="lightbox" aria-label="Photo viewer" data-i18n-label="viewerLabel">
+        <div class="lightbox__top">
+            <span class="lightbox__count" aria-live="polite"></span>
+            <button class="lightbox__close" type="button" autofocus><span aria-hidden="true">✕</span> <span data-i18n="close">Close</span></button>
+        </div>
+        <figure class="lightbox__stage">
+            <img class="lightbox__img" alt="">
+            <figcaption class="lightbox__caption"></figcaption>
+        </figure>
+        <div class="lightbox__nav">
+            <button class="lightbox__prev" type="button"><span aria-hidden="true">←</span> <span data-i18n="previous">Previous</span></button>
+            <button class="lightbox__next" type="button"><span data-i18n="next">Next</span> <span aria-hidden="true">→</span></button>
+        </div>
+    </dialog>
 </body>
 </html>
