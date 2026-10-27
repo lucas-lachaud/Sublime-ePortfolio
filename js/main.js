@@ -4,7 +4,7 @@ const texts = {
         skip: 'Skip to content',
         about: 'About', education: 'Education', experience: 'Experience', projects: 'Projects', skills: 'Skills', contact: 'Contact',
         passionsTitle: 'Outside of computing',
-        passionsIntro: "Even though computing is my passion, I'm above all a curious person, always eager to learn. I love understanding how the world works, which is why I have many different passions.",
+        passionsIntro: 'Outside of computing, I like understanding how things work, whether it’s a galaxy, a plane or a deck I build myself.',
         galleryHint: 'Click or tap a photo to see it full size.',
         astroTitle: 'Astronomy and astrophotography',
         astroText: 'I photograph nebulae and galaxies, such as the Carina Nebula, M83 and the Sombrero Galaxy (M104).',
@@ -14,23 +14,23 @@ const texts = {
         woodText: 'Building a wooden deck, from the frame to the decking boards.',
         deckFrame: 'The frame', deckBoards: 'Laying the decking boards', deckDone: 'The finished deck',
         elecTitle: 'Electronics and 3D printing',
-        elecText: "I solder and 3D-print parts. I'm currently working on a BC-250 (an AMD board originally made for cryptocurrency mining) that I completely rebuilt and fully unlocked. I use it as a server that I can reach from anywhere with Tailscale.",
+        elecText: 'I design and 3D-print parts and do my own soldering. I rebuilt a BC-250 (an AMD board originally made for crypto mining) and turned it into a home server I can reach from anywhere with Tailscale.',
         bc250: 'BC-250 case, 3D model', bc250Open: 'BC-250 case, exploded view',
         financeTitle: 'Finance and markets',
-        financeText: 'I was passionate about finance long before my internship, especially when it comes to tech companies such as Nvidia, AMD and Big Tech. I like following the markets because they help me understand the world and how it works, and they are closely tied to the news. I also invest personally, mostly in US markets. My internship at BCI confirmed this passion: I loved working in banking, where I also saw payment systems up close.',
+        financeText: 'I follow the markets closely, especially tech companies like Nvidia and AMD: they’re a great way to understand the world and the news. My internship at BCI confirmed my interest in banking, where I also saw payment systems up close.',
         aviationTitle: 'Aviation',
-        aviationText: 'I had started training for my private pilot licence (PPL), but had to stop because of the riots in New Caledonia. Aviation is still a big passion of mine.',
+        aviationText: 'I had started training for my private pilot licence (PPL), but had to stop because of the riots in New Caledonia. Flying still means a lot to me.',
         amedee: 'Flying over the Amédée lighthouse', cdg: 'An Air France Boeing 777 at Paris-Charles de Gaulle', sydney: 'Over Sydney',
         viewerLabel: 'Photo viewer', close: 'Close', previous: 'Previous', next: 'Next',
         heroMeta: 'Computer science engineering student · ENSEEIHT',
         heroText: 'From Nouméa to Toulouse: 17,200 km to become an engineer.',
         scrollHint: 'Scroll',
         noumeaText: 'New Caledonia. This is where it all begins.',
-        licenceMeta: '2024 · University of New Caledonia',
+        licenceMeta: '2024 – 2026 · University of New Caledonia',
         licenceTitle: "Bachelor's in Computer Science",
-        licenceText: 'Tutored project: a 4096-bit RSA library in C, hardened against side-channel attacks.',
+        licenceText: 'Tutored project: a 4096-bit RSA library in C, with a study of side-channel resistance.',
         bciMeta: 'Oct. 2025 – Jan. 2026 · Internship',
-        bciTitle: 'Full stack developer',
+        bciTitle: 'Software engineer intern',
         bciText: "Banque Calédonienne d'Investissement, BCInet online banking. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.",
         degreeMeta: 'June 2026 · Graduation',
         degreeTitle: 'Top of the class',
@@ -48,7 +48,7 @@ const texts = {
         skip: 'Aller au contenu',
         about: 'À propos', education: 'Formation', experience: 'Expérience', projects: 'Projets', skills: 'Compétences', contact: 'Contact',
         passionsTitle: "En dehors de l'informatique",
-        passionsIntro: "Même si l'informatique est ma passion, je suis avant tout quelqu'un de curieux, toujours en quête de savoir. J'aime comprendre comment le monde fonctionne, c'est pourquoi j'ai beaucoup de passions, diverses et variées.",
+        passionsIntro: 'En dehors de l’informatique, j’aime comprendre comment les choses fonctionnent, qu’il s’agisse d’une galaxie, d’un avion ou d’une terrasse que je construis moi-même.',
         galleryHint: 'Cliquez ou touchez une photo pour la voir en grand.',
         astroTitle: 'Astronomie et astrophotographie',
         astroText: 'Je photographie des nébuleuses et des galaxies, comme la nébuleuse de la Carène, M83 ou la galaxie du Sombrero (M104).',
@@ -58,23 +58,23 @@ const texts = {
         woodText: "La construction d'une terrasse en bois, de l'ossature à la pose des lames.",
         deckFrame: "L'ossature", deckBoards: 'La pose des lames', deckDone: 'La terrasse terminée',
         elecTitle: 'Électronique et impression 3D',
-        elecText: "Je fais de la soudure et j'imprime des pièces en 3D. En ce moment, je travaille sur une BC-250 (une carte AMD conçue à l'origine pour le minage de cryptomonnaies), que j'ai entièrement refaite et débloquée. Je m'en sers comme serveur, accessible de partout grâce à Tailscale.",
+        elecText: 'Je conçois et imprime des pièces en 3D et je fais mes propres soudures. J’ai remis en état une BC-250 (une carte AMD conçue à l’origine pour le minage de cryptomonnaies) et je l’ai transformée en serveur personnel, accessible de partout grâce à Tailscale.',
         bc250: 'Boîtier de la BC-250, modèle 3D', bc250Open: 'Boîtier de la BC-250, vue éclatée',
         financeTitle: 'Finance et marchés',
-        financeText: "La finance me passionnait bien avant mon stage, surtout tout ce qui touche aux entreprises de la tech, comme Nvidia, AMD ou les GAFAM. J'aime suivre les marchés, parce qu'ils aident à comprendre le monde et son fonctionnement, et qu'ils sont étroitement liés à l'actualité. J'investis d'ailleurs à titre personnel, surtout sur les marchés américains. Mon stage à la BCI a confirmé cette passion : j'ai adoré travailler dans le secteur bancaire, où j'ai aussi pu voir de près les systèmes de paiement.",
+        financeText: 'Je suis les marchés de près, surtout les entreprises de la tech comme Nvidia et AMD : c’est un excellent moyen de comprendre le monde et l’actualité. Mon stage à la BCI a confirmé mon intérêt pour le secteur bancaire, où j’ai aussi pu voir de près les systèmes de paiement.',
         aviationTitle: 'Aviation',
-        aviationText: "J'avais commencé ma formation de pilote privé (PPL), mais j'ai dû l'arrêter à cause des émeutes en Nouvelle-Calédonie. L'aviation reste une grande passion.",
+        aviationText: "J'avais commencé ma formation de pilote privé (PPL), mais j'ai dû l'arrêter à cause des émeutes en Nouvelle-Calédonie. L'aviation me tient toujours autant à cœur.",
         amedee: 'En vol au-dessus du phare Amédée', cdg: "Un Boeing 777 d'Air France à Paris-Charles-de-Gaulle", sydney: 'Au-dessus de Sydney',
         viewerLabel: 'Visionneuse de photos', close: 'Fermer', previous: 'Précédente', next: 'Suivante',
         heroMeta: 'Élève ingénieur en informatique · ENSEEIHT',
         heroText: 'De Nouméa à Toulouse, 17 200 km pour devenir ingénieur.',
         scrollHint: 'Faites défiler',
         noumeaText: "Nouvelle-Calédonie. C'est ici que tout commence.",
-        licenceMeta: '2024 · Université de la Nouvelle-Calédonie',
-        licenceTitle: 'Licence Informatique',
-        licenceText: 'Projet tutoré : une bibliothèque RSA 4096 bits en C, résistante aux attaques par canaux auxiliaires.',
+        licenceMeta: '2024 – 2026 · Université de la Nouvelle-Calédonie',
+        licenceTitle: "Licence d'informatique",
+        licenceText: 'Projet tutoré : une bibliothèque RSA 4096 bits en C, avec une étude de la résistance aux attaques par canaux auxiliaires.',
         bciMeta: 'Oct. 2025 – janv. 2026 · Stage',
-        bciTitle: 'Développeur full stack',
+        bciTitle: 'Stagiaire ingénieur logiciel',
         bciText: "Banque Calédonienne d'Investissement, plateforme BCInet. Angular, Spring Boot, Spring Batch, Liquibase, Azure DevOps.",
         degreeMeta: 'Juin 2026 · Diplôme',
         degreeTitle: 'Major de promotion',
@@ -208,6 +208,14 @@ function scheduleHeaderUpdate() {
 
 window.addEventListener('scroll', scheduleHeaderUpdate, { passive: true });
 window.addEventListener('resize', scheduleHeaderUpdate);
+
+// L'adresse e-mail est assemblée ici pour ne pas apparaître en clair dans le HTML (anti-spam).
+const emailAddress = ['lucas.lachaud', 'etu.toulouse-inp.fr'].join('@');
+document.querySelectorAll('[data-email]').forEach((link) => {
+    link.href = `mailto:${emailAddress}`;
+    link.hidden = false;
+});
+document.querySelectorAll('[data-email-text]').forEach((element) => { element.textContent = emailAddress; });
 
 // Visionneuse : s'ouvre sur la vignette déjà chargée, passe à la grande image dès qu'elle arrive.
 // Le bouton Retour du navigateur (ou du téléphone) la referme au lieu de quitter la page.

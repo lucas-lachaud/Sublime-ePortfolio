@@ -13,6 +13,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 h1, h2, h3, p, ol { margin: 0; }
 ol { padding: 0; list-style: none; }
 button { font: inherit; }
@@ -287,6 +288,9 @@ main { flex: 1; }
 
 .entry__title { margin: 0; font-size: 1.375rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.35; }
 .entry > .entry__meta { margin-top: 6px; color: var(--muted); font-family: var(--font-mono); font-size: 1rem; }
+.entry > .entry__subtitle { margin: 32px 0 0; font-size: 1.1875rem; font-weight: 600; line-height: 1.35; }
+.entry > .entry__subtitle + .entry__list { margin-top: 12px; }
+.entry > .entry__outro { margin-top: 32px; color: var(--muted); }
 .entry__list { margin-bottom: 0; padding-left: 1.25em; }
 .entry__list li + li { margin-top: .6em; }
 .entry__list li::marker { color: var(--accent); }
